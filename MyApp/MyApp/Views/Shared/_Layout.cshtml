@@ -16,13 +16,20 @@
     string baseDesktopClasses = "rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white";
     string baseMobileClasses = "block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white";
     string homeLinkClasses = baseDesktopClasses;
+    string inventoryLinkClasses = baseDesktopClasses;
     string privacyLinkClasses = baseDesktopClasses;
     string homeMobileClasses = baseMobileClasses;
+    string inventoryMobileClasses = baseMobileClasses;
     string privacyMobileClasses = baseMobileClasses;
     if (string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase))
     {
         homeLinkClasses = "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white dark:bg-gray-950/50";
         homeMobileClasses = baseMobileClasses + " bg-gray-900 text-white dark:bg-gray-950/50";
+    }
+    if (string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Inventory", System.StringComparison.OrdinalIgnoreCase))
+    {
+        inventoryLinkClasses = "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white dark:bg-gray-950/50";
+        inventoryMobileClasses = baseMobileClasses + " bg-gray-900 text-white dark:bg-gray-950/50";
     }
     if (string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Privacy", System.StringComparison.OrdinalIgnoreCase))
     {
@@ -56,6 +63,7 @@
                         <div class="hidden sm:ml-6 sm:block">
                             <div class="flex space-x-4">
                                 <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)" data-home-button="true">Home</a>
+                                <a asp-area="" asp-controller="Home" asp-action="Inventory" class="@inventoryLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Inventory", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Inventory</a>
                                 <a asp-area="" asp-controller="Home" asp-action="Privacy" class="@privacyLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Privacy", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Privacy</a>
                             </div>
                         </div>
@@ -86,6 +94,7 @@
             <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
                 <div class="space-y-1 px-2 pt-2 pb-3">
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)" data-home-button="true">Home</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Inventory" class="@inventoryMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Inventory", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Inventory</a>
                     <a asp-area="" asp-controller="Home" asp-action="Privacy" class="@privacyMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Privacy", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Privacy</a>
                 </div>
             </el-disclosure>
