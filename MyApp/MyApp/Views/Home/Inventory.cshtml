@@ -44,7 +44,7 @@
         </div>
         <div class="mt-4 flex shrink-0 md:mt-0 md:ml-4">
             <button type="button" class="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs inset-ring inset-ring-gray-300 hover:bg-gray-50">Export</button>
-            <button type="button" class="ml-3 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Item</button>
+            <button type="button" data-register-article-button="true" class="ml-3 inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Registrar artículo</button>
         </div>
     </div>
 </div>
@@ -75,7 +75,7 @@
                 <p class="mt-2 text-sm text-gray-700">Detailed view of stock levels organized by warehouse.</p>
             </div>
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                <button type="button" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Item</button>
+                <button type="button" data-register-article-button="true" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Registrar artículo</button>
             </div>
         </div>
         <div class="mt-8 flow-root">
@@ -144,3 +144,19 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script>
+        (function () {
+            const registerButtons = document.querySelectorAll('[data-register-article-button="true"]');
+            const registerUrl = '@Url.Action("RegisterArticle", "Home")';
+
+            registerButtons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    window.open(registerUrl, '_blank', 'width=900,height=800,noopener');
+                });
+            });
+        })();
+    </script>
+}

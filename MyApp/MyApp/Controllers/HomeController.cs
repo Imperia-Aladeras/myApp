@@ -33,6 +33,7 @@ namespace MyApp.Controllers
             return View();
         }
 
+        public IActionResult RegisterArticle()
         public IActionResult CreateUser()
         {
             return View();
