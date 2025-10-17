@@ -10,6 +10,12 @@
 - Provide structured logging with Serilog.
 - Write unit tests with xUnit and FluentAssertions.
 - Document the API with Swagger/OpenAPI.
+- Ensure that every HTML page served by the application includes the following scripts so that Tailwind CSS and Tailwind Plus Elements are available:
+
+  ```html
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/%40tailwindplus/elements@1" type="module"></script>
+  ```
 
 ## Code Style
 - Always use explicit type declarations; `var` is not allowed.
