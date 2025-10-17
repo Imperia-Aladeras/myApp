@@ -17,8 +17,10 @@
     string baseMobileClasses = "block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white";
     string homeLinkClasses = baseDesktopClasses;
     string privacyLinkClasses = baseDesktopClasses;
+    string foodsLinkClasses = baseDesktopClasses;
     string homeMobileClasses = baseMobileClasses;
     string privacyMobileClasses = baseMobileClasses;
+    string foodsMobileClasses = baseMobileClasses;
     if (string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase))
     {
         homeLinkClasses = "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white dark:bg-gray-950/50";
@@ -28,6 +30,11 @@
     {
         privacyLinkClasses = "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white dark:bg-gray-950/50";
         privacyMobileClasses = baseMobileClasses + " bg-gray-900 text-white dark:bg-gray-950/50";
+    }
+    if (string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "PollosQunin", System.StringComparison.OrdinalIgnoreCase))
+    {
+        foodsLinkClasses = "rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white dark:bg-gray-950/50";
+        foodsMobileClasses = baseMobileClasses + " bg-gray-900 text-white dark:bg-gray-950/50";
     }
 }
     <header>
@@ -57,6 +64,7 @@
                             <div class="flex space-x-4">
                                 <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)" data-home-button="true">Home</a>
                                 <a asp-area="" asp-controller="Home" asp-action="Privacy" class="@privacyLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Privacy", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Privacy</a>
+                                <a asp-area="" asp-controller="Home" asp-action="PollosQunin" class="@foodsLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "PollosQunin", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Comidas</a>
                             </div>
                         </div>
                     </div>
@@ -87,6 +95,7 @@
                 <div class="space-y-1 px-2 pt-2 pb-3">
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)" data-home-button="true">Home</a>
                     <a asp-area="" asp-controller="Home" asp-action="Privacy" class="@privacyMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Privacy", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Privacy</a>
+                    <a asp-area="" asp-controller="Home" asp-action="PollosQunin" class="@foodsMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "PollosQunin", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Comidas</a>
                 </div>
             </el-disclosure>
         </nav>
