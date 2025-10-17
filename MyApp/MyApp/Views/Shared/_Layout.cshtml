@@ -55,7 +55,7 @@
                         </div>
                         <div class="hidden sm:ml-6 sm:block">
                             <div class="flex space-x-4">
-                                <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Home</a>
+                                <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)" data-home-button="true">Home</a>
                                 <a asp-area="" asp-controller="Home" asp-action="Privacy" class="@privacyLinkClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Privacy", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Privacy</a>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
             </div>
             <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
                 <div class="space-y-1 px-2 pt-2 pb-3">
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Home</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="@homeMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Index", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)" data-home-button="true">Home</a>
                     <a asp-area="" asp-controller="Home" asp-action="Privacy" class="@privacyMobileClasses" aria-current="@(string.Equals(currentController, "Home", System.StringComparison.OrdinalIgnoreCase) && string.Equals(currentAction, "Privacy", System.StringComparison.OrdinalIgnoreCase) ? "page" : null)">Privacy</a>
                 </div>
             </el-disclosure>
