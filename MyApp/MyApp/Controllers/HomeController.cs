@@ -34,6 +34,7 @@ namespace MyApp.Controllers
         }
 
         public IActionResult RegisterArticle()
+        public IActionResult CreateUser()
         {
             return View();
         }
